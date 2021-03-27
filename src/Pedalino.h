@@ -72,6 +72,19 @@ const byte pinA[] = {GPIO_NUM_36, GPIO_NUM_39, GPIO_NUM_34, GPIO_NUM_35, GPIO_NU
 #define DIN_MIDI_OUT_PIN      GPIO_NUM_4
 #define BATTERY_PIN           GPIO_NUM_36   // GPIO_NUM_32 to GPIO_NUM_39 only
 #define FASTLEDS_DATA_PIN     GPIO_NUM_5
+#elif defined LOLIN32
+#undef  PEDALS
+#define PEDALS                6
+const byte pinD[] = {GPIO_NUM_36, GPIO_NUM_25, GPIO_NUM_26, GPIO_NUM_8, GPIO_NUM_11, GPIO_NUM_7};
+const byte pinA[] = {GPIO_NUM_6, GPIO_NUM_39, GPIO_NUM_16, GPIO_NUM_35, GPIO_NUM_32, GPIO_NUM_33};
+#define FACTORY_DEFAULT_PIN   GPIO_NUM_0    // Button 2
+#define USB_MIDI_IN_PIN       GPIO_NUM_5   // SDA OLED display
+#define USB_MIDI_OUT_PIN      GPIO_NUM_4   // SCL OLED display
+#define DIN_MIDI_IN_PIN       GPIO_NUM_15
+#define DIN_MIDI_OUT_PIN      GPIO_NUM_2
+#define BATTERY_PIN           GPIO_NUM_34   // Pin connected to VBAT
+#define BATTERY_ADC_EN        GPIO_NUM_14   // ADC_EN is the ADC detection enable port
+#define FASTLEDS_DATA_PIN     GPIO_NUM_15
 #else
 #undef  PEDALS
 #define PEDALS                7

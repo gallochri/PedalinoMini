@@ -43,6 +43,14 @@ SH1106Wire                display(OLED_I2C_ADDRESS, OLED_I2C_SDA, OLED_I2C_SCL);
 #define OLED_I2C_SCL      SCL
 SSD1306Wire               display(OLED_I2C_ADDRESS, OLED_I2C_SDA, OLED_I2C_SCL);
 #endif
+#if defined(LOLIN32)
+#include <SSD1306Wire.h>
+#include <OLEDDisplayUi.h>
+#define OLED_I2C_ADDRESS  0x3c
+#define OLED_I2C_SDA      5
+#define OLED_I2C_SCL      4
+SSD1306Wire               display(OLED_I2C_ADDRESS, OLED_I2C_SDA, OLED_I2C_SCL);
+#endif
 
 #define DISPLAY_WIDTH   display.getWidth()
 #define DISPLAY_HEIGHT  display.getHeight()
